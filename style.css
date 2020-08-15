@@ -1,15 +1,58 @@
+body {
+    background-color: #4dc8e9;
+}
+
 #container {
     width: 80vh;
-    height: 80vh;
+    height: 60vh;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    border: 1px solid black;
+    border: 40px solid #e90d0d;
+    border-radius: 5%;
+    background-color: white;
+}
+
+#position {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+}
+
+#buttons {
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+.btn {
+    margin: 20px;
+    width: 170px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: whitesmoke;
 }
 
 .row {
-    
+
 }
 
 .draw {
     background-color: grey;
+}
+
+h1 {
+    text-align: center;
+    font-family: sketch;
+    position: relative;
+    font-size: 50px;
+    top: 10px;
+}
+
+@font-face {
+    font-family: 'sketch';
+    src: url('fonts/Sketch 3D.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

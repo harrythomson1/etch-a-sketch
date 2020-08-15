@@ -4,6 +4,7 @@ let newGrid = document.querySelector("#newGrid")
 let colorBtn = document.querySelector("#colorBtn")
 let gretBtn = document.querySelector("#greyBtn")
 let change = false
+let beenShaked = false
 createDefault()
 
 //Creates 16X16 grid and adds functionality.
@@ -59,7 +60,7 @@ function createNew (num) {
     }
 }
 
-newGrid.addEventListener("click", function (){createNew (prompt("Please select a Grid size. (Input 64 for a 64 x 64 Sketchpad)"))})
+newGrid.addEventListener("click", function (){createNew (prompt("Please select a Grid size. (Input 64 for a 64 x 64 Grid)"))})
 
 //Switches from grey to color.
 colorBtn.addEventListener("click",function (){change = true})
