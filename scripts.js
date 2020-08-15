@@ -1,6 +1,9 @@
 let container = document.querySelector("#container");
 let reset = document.querySelector("#reset")
 let newGrid = document.querySelector("#newGrid")
+let colorBtn = document.querySelector("#colorBtn")
+let gretBtn = document.querySelector("#greyBtn")
+let change = false
 createDefault()
 
 //Creates 16X16 grid and adds functionality.
@@ -9,15 +12,24 @@ function createDefault() {
         let gridContainer = document.createElement("div")
         gridContainer.classList.add("row")
         container.appendChild(gridContainer)
-        gridContainer.addEventListener("mouseover", function(){draw(gridContainer)})
+        gridContainer.addEventListener("mouseover", function(){drawColor(gridContainer, change)})
         reset.addEventListener("click", function(){resetBtn (gridContainer)})
     }
 }
 
 
-//Adds the draw class to the DIV's
-function draw (elem) {
+//Creates a rainbow effect on the divs
+function drawColor (elem, color) {
+    if (color) {
     elem.style.backgroundColor = `rgb(${getRandomInt(357)}, ${getRandomInt(357)}, ${getRandomInt(357)})`
+    }
+    else {
+        elem.style.backgroundColor = "grey"
+    }
+}
+
+function draw (elem) {
+    elem.style.backgroundColor = "grey"
 }
 
 //Resets the grid
@@ -42,9 +54,14 @@ function createNew (num) {
         let gridContainer = document.createElement("div")
         gridContainer.classList.add("row")
         container.appendChild(gridContainer)
-        gridContainer.addEventListener("mouseover", function(){draw(gridContainer)})
+        gridContainer.addEventListener("mouseover", function(){drawColor(gridContainer, change)})
         reset.addEventListener("click", function(){resetBtn (gridContainer)})
     }
 }
 
 newGrid.addEventListener("click", function (){createNew (prompt("Please select a Grid size. (Input 64 for a 64 x 64 Sketchpad)"))})
+
+//Switches from grey to color.
+colorBtn.addEventListener("click",function (){change = true})
+
+gretBtn.addEventListener("click", function (){change = false})
